@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Window Cleaning Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            background-image: url('backgroundPicture.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+        header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #71bdec;
+    color: #050505;
+    padding: 0px 0;
+    text-align: left;
+    position: relative;
+    font-family: Georgia;
+    opacity: 0.8;
+}
+        header::before {
+           
+            font-size: 2rem;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            background-image: url('window-cleaning-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #35424a;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .feature {
+            flex-basis: calc(33.33% - 20px);
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .feature h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #35424a;
+        }
+        .feature p {
+            font-size: 1.1rem;
+            color: #777;
+        }
+        .feature-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .feature-button:hover {
+            background-color: #2c3840;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #35424a;
+        }
+        .contact p {
+            font-size: 1.2rem;
+            color: #777;
+        }
+        .contact a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact a:hover {
+            background-color: #2c3840;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .action-button {
+            margin: 0 10px;
+            padding: 15px 25px;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .action-button:hover {
+            background-color: #2c3840;
+        }
+        .about-image {
+           
+            margin-left: 10px;
+           
+        }
+        img {
+            max-width: 100%;
+            height: 5em;
+        }
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            margin-right: 10px;
+}
+
+.dropbtn {
+    background-color: #60b6ec;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+   
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0; /* Adjust the padding for smaller screens */
+    }
+    .about-image {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .features {
+        flex-direction: column; /* Stack features vertically on smaller screens */
+    }
+    .feature {
+        flex-basis: 100%; /* Expand features to full width on smaller screens */
+    }
+}
+
+.review-container {
+     /* Take up available space */
+    padding: 10px;
+    
+    border-radius: 5px;
+   
+  }
+
+  .star-rating {
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  .star-rating:hover,
+  .star-rating:hover ~ .star-rating{
+    color: rgb(228, 227, 225);
+  }
+
+  .star-rating.selected {
+    color: gold;
+  }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1> ☀️ Westend Windows and Gutters ☀️ </h1>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Menu ⇓</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home ⌂</a>
+                <a href="about-us.html">About Us</a>
+                <a href="pricingAndServices.html">Pricing and Services</a>
+                <a href="https://resurva.com">Schedule an Appointment</a>
+                <a href="Gallary.html">Our Gallary</a>
+                <a href="mailto:guttersandwindows@yahoo.com">Contact Us</a>
+                
+            </div>
+            
+        </div>
+        <div class="about-image">
+            <img src="WindowsAndGutterLogo.png" alt="Our Team">
+        </div>
+        
+        
+    </header>
+    <div class="container">
+        <div class="hero">
+            <h1>Local, Reliable, Reasonably Priced</h1>
+            <p>Residential and commercial window cleaning and gutter cleaning services.</p>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h2>Local Team</h2>
+                <p>Based out of the Bloor West Village neighbourhood, Toronto, Ontario.</p>
+                <a class="feature-button" href="about-us.html">Learn More About Us!</a>
+            </div>
+            <div class="feature">
+                <h2>Browse the services we offer</h2>
+                <p>We take pride in our work and guarantee your satisfaction with our window cleaning services. </p>
+                <a class="feature-button" href="pricingAndServices.html">Our pricing and services</a>
+            </div>
+            <div class="feature">
+                <h2>Book a service</h2>
+                <p>Easily select a time that meets your needs.</p>
+                <a class="feature-button" href="https://guttersandwindowsappointment.onrender.com/">Request an Appointment Here</a>
+            </div>
+            <div class="review-container">
+                <h2>Did you have an appointment with us?</h2>
+                <p>Leave a Review!</p>
+                <form id="reviewForm">
+                  
+                  <textarea id="reviewText" name="reviewText" rows="4" required></textarea>
+                  <label for="rating">Rating:</label>
+                  <div class="star-rating" onclick="setRating(1)">&#9733;</div>
+                  <div class="star-rating" onclick="setRating(2)">&#9733;</div>
+                  <div class="star-rating" onclick="setRating(3)">&#9733;</div>
+                  <div class="star-rating" onclick="setRating(4)">&#9733;</div>
+                  <div class="star-rating" onclick="setRating(5)">&#9733;</div>
+                  <input type="hidden" id="rating" name="rating" required>
+                  <br><br>
+                  <button type="submit">Submit Review</button>
+                </form>
+              </div>
+        </div>
+        
+        <div class="contact">
+            <h2>Have questions or want a free estimate? Contact us</h2>
+            <a href="mailto:guttersandwindows@yahoo.com">Get in Touch</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle star rating interaction
+        function setRating(rating) {
+          const starElements = document.querySelectorAll('.star-rating');
+          const ratingInput = document.getElementById('rating');
+          ratingInput.value = rating;
+      
+          starElements.forEach((star, index) => {
+            if (index < rating) {
+              star.classList.add('selected');
+            } else {
+              star.classList.remove('selected');
+            }
+          });
+        }
+      </script>
+</body>
+</html>
