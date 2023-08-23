@@ -9,36 +9,56 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: #ffffff;
+        }
+        header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    justify-content: space-between;
+    background-color: #71bdec;
+    color: #050505;
+    font-family: Georgia;
+    opacity: 0.95;
+}
+   
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px;
             background-image: url('backgroundPicture.jpg');
             background-size: cover;
             background-position: center;
             color: #333;
+            
         }
-        header {
+        .second-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #71bdec;
-    color: #050505;
-    text-align: left;
-    position: relative;
-    font-family: Georgia;
-    opacity: 0.8;
+    margin-top: 50px;
+    align-items: center;
 }
-        header::before {
-           
-            font-size: 2rem;
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .container {
-            max-width: 1200px;
+        .fullContainer {
+    display: flex; /* Display the containers side by side */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Distribute items along the main axis */
+    margin-top: 0px; /* Add some space at the top */
+    margin-bottom:0px;
+    background-image: linear-gradient(to bottom, #b1d5eb, #ffffff); /* Gradient background */
+    padding: 40px;
+}
+        .third-container {
+            max-width: 1500px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0px;
+    
+            background-color: #ffffff;
+            align-items: left;
         }
+       
         .hero {
             text-align: center;
             padding: 40px 0;
@@ -46,6 +66,11 @@
             background-size: cover;
             background-position: center;
             color: #35424a;
+        }
+
+        .hero h7 {
+            font-size: 3rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
         .hero h1 {
             font-size: 3rem;
@@ -135,12 +160,23 @@
         }
         .about-image {
            
-            margin-left: 10px;
+            align-items:Left;
            
         }
         img {
             max-width: 100%;
-            height: 5em;
+            height: 4em;
+            padding:0px;
+        }
+
+        .MapImage {
+            align-items:Center;
+        }
+
+        .MapImage img{
+            max-width:100%;
+            height:42em;
+            padding:0px;
         }
         .dropdown {
             display: inline-block;
@@ -151,11 +187,12 @@
 .dropbtn {
     background-color: #60b6ec;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: auto;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 45px;
+    align-items: Right;
 
    
 }
@@ -170,14 +207,7 @@
     z-index: 1;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+
 .dropdown-content a {
     color: #333;
     padding: 12px 16px;
@@ -236,15 +266,154 @@
   .star-rating.selected {
     color: gold;
   }
-    
+  .slider {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            cursor: ew-resize; /* Change the cursor to a horizontal resize cursor */
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%; /* Make the width twice the container to accommodate both images */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for smooth sliding */
+        }
+
+        .slide img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 70em;
+            margin: 0 auto;
+            opacity:1;
+        }
+
+       
+
+.slider:hover .slide:first-child {
+    animation: slide 1s forwards;
+}
+
+.four-buttons-container {
+    max-width: 500px;
+    margin-top: 50px;
+    margin-right: 100px;
+    text-align: center; /* Center align the header and buttons */
+   ;}
+
+.four-buttons-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #35424a;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center; /* Center align the buttons */
+    margin-top: 30px; /* Add a little space between the header and buttons */
+    margin-bottom: 30px;
+}
+
+.circular-button {
+    width: 50px;
+    height: 50px;
+    background-color: #80cbfa;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.circular-button:hover {
+    background-color: #2c3840;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-content li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.footer-content a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content a:hover {
+    color: #cbeaff;
+}
+
+
+
+.photo-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.photo img {
+    max-width: 100%;
+    height: auto;
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Westend Windows and Gutters</h1>
         
         <div class="dropdown">
-            <button class="dropbtn">Menu ⇓</button>
+            <button class="dropbtn">≣</button>
             <div class="dropdown-content">
                 <a href="index.html">Home ⌂</a>
                 <a href="about-us.html">About Us</a>
@@ -307,6 +476,62 @@
             <a href="mailto:guttersandwindows@yahoo.com">Get in Touch</a>
         </div>
     </div>
+<div class="fullContainer">
+    <div class="second-container">
+        <div class="photo-group">
+            <div class="photo">
+                <img src="Slide1.png" alt="Photo 1">
+            </div>
+            <div class="photo">
+                <img src="slide2.png" alt="Photo 2">
+            </div>
+        </div>
+        <div class="photo-group">
+            <div class="photo">
+                <img src="slide2.2.jpg" alt="Photo 3">
+            </div>
+            <div class="photo">
+                <img src="slide2.1.jpg" alt="Photo 4">
+            </div>
+        </div>
+        <div class="photo-group">
+            <div class="photo">
+                <img src="slide3.1.jpg" alt="Photo 3">
+            </div>
+            <div class="photo">
+                <img src="slide3.2.jpg" alt="Photo 4">
+            </div>
+        </div>
+        
+    </div>
+    
+    
+
+    <div class="four-buttons-container">
+        <h2>4 Step Easy Process to Book</h2>
+        <div class="button-row">
+
+        <button class="circular-button"id="button1">1</button>
+        <button class="circular-button" id="button2">2</button>
+        <button class="circular-button"id="button3">3</button>
+        <button class="circular-button"id="button4">4</button>
+        </div>
+        <div class="text-container"></div>
+    </div>
+</div>
+
+    <div class="third-container">
+        <div class="MapImage">
+            <img src="Westend Map Image.jpg" alt="Our Team">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Westend Windows and Gutters. All rights reserved.</p>
+            
+        </div>
+    </footer>
 
     <script>
         // JavaScript to handle star rating interaction
@@ -323,6 +548,85 @@
             }
           });
         }
+
+        const button1 = document.getElementById('button1');
+const button2 = document.getElementById('button2');
+const button3 = document.getElementById('button3');
+const button4 = document.getElementById('button4');
+const textContainer = document.querySelector('.text-container');
+
+// Define the text content for each button
+const textContent = {
+  button1: "Go to our requesting appointment page, located on our menu",
+  button2: "Fill out all of the options to request an appointment, then press submit",
+  button3: "Our team will recieve your request via email, wait for a response back",
+  button4: "Once you recieve a response you can confirm the time and price with the team"
+};
+
+// Add click event listeners to the buttons
+button1.addEventListener('click', () => displayText('button1'));
+button2.addEventListener('click', () => displayText('button2'));
+button3.addEventListener('click', () => displayText('button3'));
+button4.addEventListener('click', () => displayText('button4'));
+
+// Function to display text based on the button clicked
+function displayText(buttonId) {
+  // Get the text content for the clicked button
+  const content = textContent[buttonId];
+  
+  // Update the text container with the content
+  textContainer.textContent = content;
+}
+
+
+const photo = document.getElementById('resizable-photo');
+const backgroundPhoto = document.getElementById('background-photo');
+let isDragging = false;
+photo.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    photo.style.cursor = 'grabbing';
+    photo.style.transition = 'none';
+
+    backgroundPhoto.style.display = 'block';
+
+    const startX = event.clientX;
+    const startWidth = parseFloat(getComputedStyle(photo).width);
+
+    const onMouseMove = (event) => {
+        if (!isDragging) return;
+
+        const offsetX = event.clientX - startX;
+
+        const newWidth = Math.max(1, startWidth + offsetX);
+
+        const newNewWidth=Math.min(145, newWidth);
+
+        if (newNewWidth <= 1) {
+            photo.style.display = 'none'; // Hide the photo if width is too small
+        } else {
+            photo.style.width = newNewWidth + 'px';
+            photo.style.display = 'block'; // Show the photo while dragging
+        }
+
+        const backgroundShift = (newNewWidth - 145) / 2;
+        backgroundPhoto.style.backgroundPositionX = `${-backgroundShift}px`;
+    };
+
+    const onMouseUp = () => {
+        isDragging = false;
+        photo.style.cursor = 'grab';
+        photo.style.transition = 'all 0.3s ease';
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+        photo.style.display = 'block'; // Reset display when dragging ends
+        
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+});
+
+photo.addEventListener('dragstart', (event) => event.preventDefault());
       </script>
 </body>
 </html>
